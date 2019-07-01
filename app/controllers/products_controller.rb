@@ -13,7 +13,11 @@ class ProductsController < ApplicationController
       redirect_to products_path, notice: "El producto fue publicado"
     else
       render :new
-    end 
+    end
+  end
+
+  def show
+    @product = Product.find(params[:id])
   end
 
   private
